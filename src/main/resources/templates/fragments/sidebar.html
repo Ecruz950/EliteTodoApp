@@ -1,0 +1,59 @@
+<!-- fragments/sidebar.html -->
+<nav class="sidebar" th:fragment="sidebar" xmlns:th="http://www.thymeleaf.org">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img alt="logo" th:src="@{/images/logo.png}"/>
+            </span>
+            <div class="text header-text">
+                <span class="name">ToDoList Elite</span>
+                <span class="username" th:text="${username}"></span>
+            </div>
+        </div>
+        <i class="bx bx-chevron-right sidebar-toggle"></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a th:href="@{/}">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nev-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a th:href="@{/tasks}">
+                        <i class="bx bx-task icon"></i>
+                        <span class="text nev-text">Tasks</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a th:href="@{/profile}">
+                        <i class="bx bx-user icon"></i>
+                        <span class="text nev-text">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li>
+                <a th:href="@{/logout}">
+                    <i class="bx bx-log-out icon"></i>
+                    <span class="text nev-text">Log Out</span>
+                </a>
+            </li>
+            <li class="dark-mode">
+                <div class="moon-sun">
+                    <i class="bx bx-moon moon icon"></i>
+                    <i class="bx bx-sun sun icon"></i>
+                </div>
+                <span class="mode-text text">Dark Mode</span>
+                <div class="dark-mode-toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="register-container">
+    <h1>Register</h1>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" required th:field="*{username}" type="text"/>
+            <p th:if="${error}" th:text="${error}"></p> <!-- Display error message -->
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" required th:field="*{email}" type="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" required th:field="*{password}" type="password"/>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" name="confirmPassword" required type="password">
+        </div>
+        <button type="submit">Register</button>
+        <div class="options">
+            <a th:href="@{/login}">Already have an account? Login</a>
+        </div>
+    </form>
+</div>
+<script th:src="@{/js/register.js}"></script>
+</body>
+</html>

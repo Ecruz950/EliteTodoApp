@@ -1,0 +1,76 @@
+<div class="dashboard-container" th:fragment="dashboard"
+     xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Metric Cards -->
+    <div class="dashboard">
+        <div class="metric-card pending-today" id="pending-today-card" onclick="loadTableData('pendingToday')">
+            <h3>Tasks Pending Today</h3>
+            <p id="tasks-pending-today" th:text="${totalPendingToday}"></p>
+        </div>
+        <div class="metric-card total-pending" id="pending-total-card" onclick="loadTableData('pendingTotal')">
+            <h3>Total Tasks Pending</h3>
+            <p id="tasks-pending-total" th:text="${totalPending}"></p>
+        </div>
+        <div class="metric-card total-completed" id="completed-total-card" onclick="loadTableData('completedTotal')">
+            <h3>Total Tasks Completed</h3>
+            <p id="tasks-completed-total" th:text="${totalCompleted}"></p>
+        </div>
+    </div>
+
+    <!-- Dynamic Table -->
+    <div class="task-table">
+        <div class="table-header-with-button">
+            <h3 id="table-title">Task Details</h3>
+            <a id="button-link" th:href="@{/tasks/add}">
+                <button class="btn btn-add" id="add-task-button" type="button">
+                    <span class="bx bx-add-to-queue"></span>
+                </button>
+            </a>
+        </div>
+        <table>
+            <colgroup>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Due Date</th>
+                <th span="4">Options</th>
+            </tr>
+            </thead>
+            <tbody id="table-body">
+            <tr th:each="pendingTask: ${pendingTasks}">
+                <td th:text="${pendingTask.title}"></td>
+                <td th:text="${pendingTask.completed} ? 'completed' : 'pending'"></td>
+                <td th:text="${pendingTask.dueDate}"></td>
+                <td class="buttons-container">
+                    <form class="buttons-container flex-1" th:action="@{/api/tasks/update/}+${pendingTask.id}">
+                        <button class="btn btn-edit flex-1" id="edit-task-button" type="submit">
+                            <span class="bx bx-edit"></span>
+                        </button>
+                    </form>
+                    <form class="buttons-container flex-1" th:action="@{/api/tasks/complete/}+${pendingTask.id}"
+                          th:method="post">
+                        <button class="btn btn-complete flex-1" id="complete-task-button"
+                                onmousedown="party.confetti(this)"
+                                type="submit">
+                            <span class="bx bx-party"></span>
+                        </button>
+                    </form>
+                    <form class="buttons-container flex-1" method="post"
+                          th:action="@{/api/tasks/delete/}+${pendingTask.id}">
+                        <input name="_method" type="hidden" value="DELETE"/>
+                        <button class="btn btn-delete flex-1" id="delete-task-button" type="submit">
+                            <span class="bx bx-trash"></span>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

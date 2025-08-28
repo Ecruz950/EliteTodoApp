@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tasks</title>
+
+    <!-- Boxicons CSS -->
+    <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<div th:replace="fragments/sidebar :: sidebar"></div>
+<main class="home">
+    <div class="tasks-list">
+        <!-- Loop through tasks -->
+        <div class="task-card" th:classappend="${task.completed ? 'completed-task-card' : 'pending-task-card' }"
+             th:each="task : ${tasks}">
+            <h2 th:text="${task.title}">Task Title</h2>
+            <p th:text="${task.description}">Task Description</p>
+            <p>
+                <strong>Due Date:</strong>
+                <span th:text="${task.dueDate}">2024-01-01</span>
+            </p>
+            <form th:action="@{/api/tasks/update/}+${task.id}" th:method="get">
+                <button class="btn btn-primary flex-1" type="submit">
+                    View Details
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>

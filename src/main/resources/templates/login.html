@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Login | ToDoList Elite</title>
+
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="login-container">
+    <div class="success" th:if="${param.registered}">
+        Registration successful. Please log in.
+    </div>
+    <div class="form-card">
+        <h1>Login</h1>
+        <form method="post" th:action="@{/login}">
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <input id="username" name="username" placeholder="Enter username or email" required type="text"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" placeholder="Enter password" required type="password"/>
+            </div>
+            <button class="btn-login" type="submit">Login</button>
+        </form>
+        <div class="error" th:if="${param.error}">
+            Invalid username or password.
+        </div>
+        <div class="success" th:if="${param.logout}">
+            You have been logged out successfully.
+        </div>
+        <div class="form-links">
+            <a th:href="@{/register}">Register</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
