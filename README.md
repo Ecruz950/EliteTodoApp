@@ -1,4 +1,4 @@
-# ToDoRails Task Management Backend
+# ToDoRails Task Management Web Application
 
 [![Java](https://img.shields.io/badge/Java-17-blue)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.x-green)](https://spring.io/projects/spring-boot)
@@ -8,7 +8,7 @@
 ## About the Project
 
 ### Introduction
-In today’s fast-paced world, keeping track of tasks and priorities can be challenging. The **ToDoRails** is a backend system designed to help users create, organize, and manage their tasks in a secure and user-friendly environment.
+In today’s fast-paced world, keeping track of tasks and priorities can be challenging. The **ToDoRails** is a web application designed to help users create, organize, and manage their tasks in a secure and user-friendly environment.
 
 This project focuses on building a strong, reliable backend for a task management application using **Java**, **Spring Boot**, and **MySQL**, while implementing best practices in security, error management, and clean code.
 
