@@ -26,6 +26,9 @@ public class PageController {
 
 	@GetMapping("/")
 	public String getHomePage(Model model, Principal principal) {
+		if (principal == null) {
+			return "redirect:/login";
+		}
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("totalPendingToday", taskService.getTodayTasks().size());
 		model.addAttribute("totalPending", taskService.getPendingTasks().size());

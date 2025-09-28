@@ -110,7 +110,7 @@ public class SecurityConfig {
 
 
 								// Makes /login and /register publicly accessible
-                                .requestMatchers("/", "/login", "/register").permitAll()
+                                .requestMatchers("/login", "/register").permitAll()
 
 								//  permit the /api/tasks/** to all users (NOT RECOMMENDED)
 								.requestMatchers("/api/tasks/**").permitAll()

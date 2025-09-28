@@ -56,5 +56,28 @@ The primary purpose of this project is to provide hands-on experience in buildin
 | **MySQL** | Database management and persistence |
 | **JUnit & MockMvc** | Unit and integration testing for reliability and functionality |
 
+---
 
+## Screenshots
+
+### Login Page
+![Login Page](readme-assets/login_page.png)
+
+### Registration Page
+![Registration Page](readme-assets/registration_page.png)
+
+### Dashboard
+![Dashboard](readme-assets/dashboard.png)
+
+### Task Management
+![Task List](readme-assets/task_list.png)
+
+### Add New Task
+![Add Task](readme-assets/add_task_page.png)
+
+### Edit Task
+![Edit Task](readme-assets/edit_task_page.png)
+
+### User Profile
+![User Profile](readme-assets/user_profile.png)
 
