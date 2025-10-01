@@ -12,12 +12,10 @@ In today’s fast-paced world, keeping track of tasks and priorities can be chal
 
 This project focuses on building a strong, reliable backend for a task management application using **Java**, **Spring Boot**, and **MySQL**, while implementing best practices in security, error management, and clean code.
 
----
 
 ## Purpose of the Project
 The primary purpose of this project is to provide hands-on experience in building a **secure and scalable backend** for a personalized task management system. 
 
----
 
 ## Key Features
 
@@ -45,7 +43,6 @@ The primary purpose of this project is to provide hands-on experience in buildin
 - Targeted test coverage of at least **80%** for service and controller classes.
 - Clean, maintainable, and scalable code adhering to best practices.
 
----
 
 ## Technologies & Components
 | Technology | Role |
@@ -56,7 +53,6 @@ The primary purpose of this project is to provide hands-on experience in buildin
 | **MySQL** | Database management and persistence |
 | **JUnit & MockMvc** | Unit and integration testing for reliability and functionality |
 
----
 
 ## Screenshots
 
